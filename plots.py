@@ -12,9 +12,17 @@ def plotHighestReviews(reviewData):
 
     highestReviewsSorted = {k: v for k, v in sorted(highestReviews.items(), key=lambda item: item[1])}
     print(highestReviewsSorted)
-    plt.barh([x for x in highestReviewsSorted.keys()], [x for x in highestReviewsSorted.values()])
+    x = [x for x in highestReviewsSorted.keys()]
+    y = [x for x in highestReviewsSorted.values()]
+    plt.style.use("seaborn-whitegrid")
+    plt.barh(x, y)
     plt.title("Highest rating of each category")
     plt.tight_layout()
+
+    for i, v in enumerate(y):
+        plt.text(0.15, i-0.12, str(v), fontweight="bold", color="white")
+
+
     plt.show()
 
 
