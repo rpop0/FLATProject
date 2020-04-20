@@ -12,7 +12,5 @@ with open("data/modified_reviews.csv", "r") as csvfile:
         reviewData.append(line)
 
 
-
-print(reviewData[979])
-
+plots.plotHighestReviews(reviewData)
 plots.plotLowestReviews(reviewData)
