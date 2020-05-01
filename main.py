@@ -1,9 +1,8 @@
 import csv
-from modify_csv import  modify
+from modify_csv import modify
 import plots
 
 modify()
-
 
 reviewData = []
 with open("data/modified_reviews.csv", "r") as csvfile:
@@ -11,6 +10,8 @@ with open("data/modified_reviews.csv", "r") as csvfile:
     for line in reader:
         reviewData.append(line)
 
-
-plots.plotHighestReviews(reviewData)
-plots.plotLowestReviews(reviewData)
+projectPlot = plots.FLATPlot(reviewData)
+# projectPlot.plotHighest()
+# projectPlot.plotLowest()
+projectPlot.plotAverage()
+projectPlot.plotMedian()
