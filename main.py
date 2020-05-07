@@ -11,7 +11,8 @@ with open("data/modified_reviews.csv", "r") as csvfile:
         reviewData.append(line)
 
 projectPlot = plots.FLATPlot(reviewData)
-# projectPlot.plotHighest()
-# projectPlot.plotLowest()
-projectPlot.plotAverage()
-projectPlot.plotMedian()
+#projectPlot.plotHighest()
+#projectPlot.plotLowest()
+#projectPlot.plotAverage()
+#projectPlot.plotMedian()
+projectPlot.plotGetReviewsBetween(2, 3)

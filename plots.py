@@ -57,6 +57,9 @@ class FLATPlot:
         averageReviewsSorted = sortReviews(medianReviews)
         plot_bar(averageReviewsSorted, "Median of each category")
 
-
-
-
+    def plotGetReviewsBetween(self, lowerLimit, upperLimit):
+        reviews = dict()
+        for key in self.reviewDataKeys:
+            reviews[key] = computations.getReviewsBetween(self.reviewData, key, lowerLimit, upperLimit)
+        reviewsSorted = sortReviews(reviews)
+        plot_bar(reviewsSorted, "Number of reviews between " + str(lowerLimit) + " and " + str(upperLimit))
