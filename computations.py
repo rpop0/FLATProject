@@ -30,6 +30,15 @@ def getMedian(reviewData, category):
     for i in reviewData:
         sortedReviews.append(float(i[category]))
     sortedReviews = sorted(sortedReviews)
-    middlePoint = len(sortedReviews)//2
+    middlePoint = len(sortedReviews) // 2
     # Compute median
     return round((sortedReviews[middlePoint - 1] + sortedReviews[middlePoint + 1]) / 2, 2)
+
+
+def getReviewsBetween(reviewData, category, lowerLimit, upperLimit):
+    counter = 0
+
+    for i in reviewData:
+        if lowerLimit < float(i[category]) < upperLimit:
+            counter += 1
+    return counter
