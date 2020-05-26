@@ -3,7 +3,7 @@ import csv
 
 def modify():
     newHeader = ["ID", "Art Galleries", "Dance Clubs", "Juice Bars", "Restaurants", "Museums", "Resorts", "Parks",
-                 "Beaches", "Theathers", "Religious"]
+                 "Beaches", "Theaters", "Religious"]
     with open("data/tripadvisor_review.csv", "r") as csvfile:
         csvReader = csv.reader(csvfile)
         next(csvReader)
